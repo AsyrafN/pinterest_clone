@@ -10,11 +10,20 @@
   </head>
 
   <body>
+  <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+  </div>
   <% if logged_in? %>
-    Signed in as <%= current_user.first_name %>
+    Signed in as <%= current_user.first_name %> | <%= link_to ("Log Out"), sign_out_path, method: :delete %>
   <% else %>
     <%= link_to 'login', '/' %> | <%= link_to 'Signup', '/sign_up' %>
   <% end %>
     <%= yield %>
+
+  <script>
+    $(".alert").delay(1000).fadeOut('slow');
+  </script>
   </body>
 </html>
