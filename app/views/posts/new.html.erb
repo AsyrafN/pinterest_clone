@@ -1,0 +1,12 @@
+<br><br>
+<h1><strong>Post your picture</strong></h1>
+
+<%= form_with model: @post, url: posts_path, local: true do |post| %>
+  <p>
+    <%= post.text_area :caption %><br>
+    <%= post.label :caption %>
+  </p>
+  <p>
+    <%= post.submit %>
+  </p>
+<% end %>
