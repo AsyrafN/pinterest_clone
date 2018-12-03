@@ -15,7 +15,11 @@
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
   </div>
-  <% if logged_in? %>
+  <% if current_user %>
+    <%= link_to 'Home', root_path %>|
+    <%= link_to "Create Post", new_post_path %> |
+    <%= link_to "View all your post", posts_path %>
+    <br><br>
     Signed in as <%= current_user.first_name %> | <%= link_to ("Log Out"), sign_out_path, method: :delete %>
   <% else %>
     <%= link_to 'login', '/' %> | <%= link_to 'Signup', '/sign_up' %>

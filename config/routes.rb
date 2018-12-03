@@ -14,4 +14,6 @@ Rails.application.routes.draw do
       controller: "passwords",
       only: [:create, :edit, :update]
   end
+
+  resources :posts
 end

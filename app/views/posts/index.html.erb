@@ -1,0 +1,15 @@
+<br><br>
+
+<h3>Post that you posted in the past</h3>
+
+<div class="flex-container">
+  <% @posts.each do |post| %>
+    <div class="single_post">
+      ~<%= User.find(post.user_id).first_name %>
+      <br>
+      <a href="posts/<%=post.id%>">
+      <%= post.caption %>
+      </a>
+    </div><br>
+  <% end %>
+</div>

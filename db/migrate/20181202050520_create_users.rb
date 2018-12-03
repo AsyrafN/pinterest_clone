@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     	t.string :last_name
     	t.string :gender
     	t.string :avatar
+        t.integer :total_post
     	t.integer :role, default: 0
     	t.string :password_digest
 
