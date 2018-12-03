@@ -1,1 +1,7 @@
-hi
+<h1>Pinterest Clone</h1>
+
+<% if logged_in? %>
+  <%= render partial: '/welcome/signed_in' %>
+<% else %>
+  <%= render partial: '/welcome/signed_out' %>
+<% end %>
