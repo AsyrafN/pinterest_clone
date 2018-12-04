@@ -8,8 +8,9 @@
       ~<%= User.find(post.user_id).first_name %>
       <br>
       <a href="posts/<%=post.id%>">
-      <%= post.caption %>
+        <%= image_tag(post.photo.url) %>
       </a>
+      <%= post.caption %>	  
     </div><br>
   <% end %>
 </div>

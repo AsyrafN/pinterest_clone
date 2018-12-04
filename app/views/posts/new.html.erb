@@ -6,6 +6,9 @@
     <%= post.text_area :caption %><br>
     <%= post.label :caption %>
   </p>
+  <div >
+    <%= post.file_field :photo %>
+  </div>
   <p>
     <%= post.submit %>
   </p>
