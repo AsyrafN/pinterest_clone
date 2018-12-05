@@ -23,6 +23,15 @@ class PostsController < ApplicationController
 	@post = Post.find(params[:id])
 	end
 
+	def search
+		@posts = Post.all
+    	if params[:search]
+      		@posts = @posts.search_by_posts(params[:search])
+    	else
+      		redirect_to posts_path
+    	end
+	end
+
 	private
 	def post_params
 	  params.require(:post).permit(:user_id, :caption, :photo)

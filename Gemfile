@@ -68,3 +68,5 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 gem 'carrierwave', '~> 1.0'
+
+gem 'pg_search'

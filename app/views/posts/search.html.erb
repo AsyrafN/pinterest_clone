@@ -1,0 +1,13 @@
+<br><br>
+<div class="flex-container">
+<% @posts.each do |post| %>
+<div class="single_post">
+  <a href="/posts/<%=post.id%>">
+    <%= image_tag(post.photo.url) %>
+  </a>
+  <br><br>
+  <%= post.caption %>
+   </div><br>
+<% end %>
+</div>
+
