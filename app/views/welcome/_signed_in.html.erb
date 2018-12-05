@@ -1,4 +1,9 @@
 <h3>All post</h3>
+<%= form_for :post, url: search_path, method: :get do |f| %>
+  <%= f.text_field :term, list: "list", placeholder: "search posts", name: "search" %>
+  <datalist id="list"></datalist>
+  <%= f.submit "Search"%>
+<% end -%>
 
 <div class="flex-container">
   <% @posts.each do |post| %>

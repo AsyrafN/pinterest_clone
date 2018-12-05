@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   
+  get "posts/search" => 'posts#search', as: 'search'
+ 
   resources :users, controller: "users", only: [:create, :show] do
     resource :password,
       controller: "passwords",
