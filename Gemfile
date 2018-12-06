@@ -70,3 +70,9 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'carrierwave', '~> 1.0'
 
 gem 'pg_search'
+
+gem 'jquery-ui-rails'
+
+gem 'rails_12factor', group: :production
+
+gem "figaro"

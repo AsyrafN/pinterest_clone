@@ -32,6 +32,19 @@ class PostsController < ApplicationController
     	end
 	end
 
+	def ajax_search
+		@posts = Post.all
+		@posts = Post.search_by_posts(params["search"]).pluck(:caption).uniq
+		respond_to do |format|
+		  format.json { render json: @posts }
+		  format.js # remote: true is sent a js format and sends you to search.js.erb
+		end
+	end
+
+	def gifty
+		
+	end
+
 	private
 	def post_params
 	  params.require(:post).permit(:user_id, :caption, :photo)
