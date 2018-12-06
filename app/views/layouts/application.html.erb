@@ -27,7 +27,7 @@
     <br><br>
     Signed in as <%= current_user.first_name %> | <%= link_to ("Log Out"), sign_out_path, method: :delete %>
   <% else %>
-    <%= link_to 'login', '/' %> | <%= link_to 'Signup', '/sign_up' %>
+    <%= link_to 'login', '/' %> | <%= link_to 'Signup', '/sign_up' %> | <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
   <% end %>
     <%= yield %>
 

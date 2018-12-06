@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get "posts/gifty" => 'posts#gifty', as: 'gifty'
 
+  get "/auth/:provider/callback" => "users#create_from_omniauth"
+
   resources :users, controller: "users", only: [:create, :show] do
     resource :password,
       controller: "passwords",
