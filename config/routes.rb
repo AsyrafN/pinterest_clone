@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
   
   get "posts/search" => 'posts#search', as: 'search'
- 
+  get "posts/ajax_search" => 'posts#ajax_search', as: 'ajax_search'
+
+  get "posts/gifty" => 'posts#gifty', as: 'gifty'
+
   resources :users, controller: "users", only: [:create, :show] do
     resource :password,
       controller: "passwords",

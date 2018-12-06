@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+ 
+.flex-container {
+   display: flex;
+   flex-wrap: wrap;
+ }
+
+#list-data{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+iframe{
+  width: 30vw;
+  max-width: 30vw;
+  min-width: 30vw;
+  height: 20vw;
+}
