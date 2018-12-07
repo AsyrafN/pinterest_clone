@@ -3,7 +3,9 @@ class User < ApplicationRecord
   validates :email, :format => { :with => /\w+[@]\w+[.]\w{1}\w+/}, uniqueness: true, :presence => true
   validates :first_name, presence: true, on: :create
   validates :last_name, presence: true, on: :create
-  validates :password, presence: true
+  validates :password, presence: true, on: :create
+  validates :password, length: {in: 8..20}, on: :create
+  has_many :posts, dependent: :destroy
   has_many :authentications, dependent: :destroy
 
     def self.create_with_auth_and_hash(authentication, auth_hash)
@@ -21,5 +23,9 @@ class User < ApplicationRecord
     def google_token
       x = self.authentications.find_by(provider: 'google_oauth2')
       return x.token unless x.nil?
+    end
+
+    def full_name
+       "#{self.first_name} #{self.last_name}"
     end
 end
