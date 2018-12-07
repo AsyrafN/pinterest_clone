@@ -2,9 +2,9 @@
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  First Name: <%= f.text_field :first_name %><br><br>
-  Last Name: <%= f.text_field :last_name %><br><br>
-  Email: <%= f.text_field :email %><br><br>
-  Password: <%= f.password_field :password %><br><br>
+  First Name: <%= f.text_field :first_name, placeholder: "Bob" %><br><br>
+  Last Name: <%= f.text_field :last_name, placeholder: "Smith" %><br><br>
+  Email: <%= f.text_field :email, placeholder: "bob@gmail.com" %><br><br>
+  Password: <%= f.password_field :password, placeholder: "Min 8 character" %><br><br>
   <%= f.submit "Create user" %>
 <% end %>
